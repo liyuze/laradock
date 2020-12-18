@@ -73,7 +73,7 @@ COMPOSE_CONVERT_WINDOWS_PATHS=1
 ### Environment ###########################################
 
 # If you need to change the sources (i.e. to China), set CHANGE_SOURCE to true
-CHANGE_SOURCE=false
+CHANGE_SOURCE=true  # <----- 使用国内镜像源
 # Set CHANGE_SOURCE and UBUNTU_SOURCE option if you want to change the Ubuntu system sources.list file.
 UBUNTU_SOURCE=aliyun
 # Set ORACLE INSTANT_CLIENT_MIRROR option if you want to use Intranet improve download, you can download files first
@@ -101,11 +101,11 @@ SHELL_OH_MY_ZSH_ALIASES=false
 WORKSPACE_BASE_IMAGE_TAG_PREFIX=latest
 WORKSPACE_COMPOSER_GLOBAL_INSTALL=true
 WORKSPACE_COMPOSER_AUTH=false
-WORKSPACE_COMPOSER_REPO_PACKAGIST=
+WORKSPACE_COMPOSER_REPO_PACKAGIST=https://packagist.phpcomposer.com # <----- 改为国内镜像源
 WORKSPACE_NVM_NODEJS_ORG_MIRROR=
 WORKSPACE_INSTALL_NODE=true
 WORKSPACE_NODE_VERSION=node
-WORKSPACE_NPM_REGISTRY=
+WORKSPACE_NPM_REGISTRY=https://registry.npm.taobao.org # <----- 改为国内镜像源
 WORKSPACE_NPM_FETCH_RETRIES=2
 WORKSPACE_NPM_FETCH_RETRY_FACTOR=10
 WORKSPACE_NPM_FETCH_RETRY_MINTIMEOUT=10000
