@@ -20,6 +20,7 @@ FROM laradock/php-fpm:${BASE_IMAGE_TAG_PREFIX}-${LARADOCK_PHP_VERSION}
 ```
 
 > ARG 定义的变量只存在于 build 阶段，build 后变量将会消失，适用于环境构建所用的变量声明。
+> build 阶段可以在命令中使用 `--build-arg <参数名>=<值>`  覆盖文件中的配置值。
 
 
 

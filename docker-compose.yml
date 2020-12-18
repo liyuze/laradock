@@ -1,4 +1,5 @@
 version: '3.5'
+#---------- 文件后缀支持 .yml 或  .yaml
 
 networks:
   frontend:
@@ -425,7 +426,7 @@ services:
 
 ### HHVM #################################################
     hhvm:
-      build: ./hhvm
+      build: ./hhvm   # <----------- build 最简单的配置方式，字符串，指定构建上下文路径
       volumes:
         - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
       expose:
@@ -454,8 +455,8 @@ services:
 ### MySQL ################################################
     mysql:
       build:
-        context: ./mysql
-        args:
+        context: ./mysql  # <----------- 指定构建上下文路径（包含 Dockerfile 文件的目录或一个 git 库的 url 地址）
+        args:             # <----------- 指定构建参数列表
           - MYSQL_VERSION=${MYSQL_VERSION}
       environment:
         - MYSQL_DATABASE=${MYSQL_DATABASE}
@@ -585,7 +586,7 @@ services:
       volumes:
           - ${DATA_PATH_HOST}/neo4j/data:/data
           - ${DATA_PATH_HOST}/neo4j/logs:/logs
-      image: 'neo4j:latest'
+      image: 'neo4j:latest'   # <----------- 指定构建 
       networks:
         - backend
 
@@ -1392,7 +1393,7 @@ services:
     ipython-controller:
       build:
         context: ./ipython
-        dockerfile: Dockerfile.controller
+        dockerfile: Dockerfile.controller <----------- 指定 Dockerfile 候补文件，优先取 context 中的 Dockerfile
       networks:
         - backend
       extra_hosts:
